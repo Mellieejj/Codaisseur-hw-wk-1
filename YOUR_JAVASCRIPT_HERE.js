@@ -1,4 +1,4 @@
-const hero = {
+let hero = {
   name: "Coding Hero",
   heroic: true,
   inventory: [],
@@ -47,18 +47,18 @@ daggerImage.addEventListener("click", function() {
 
 bag.addEventListener("click", function() {
   equipWeapon(hero);
+
   displayStats(hero);
 });
 
 function equipWeapon(person) {
   if (person.inventory.length === 0) {
-    console.log("empty inventory");
     return;
   } else {
     person.weapon = person.inventory[0];
   }
 }
-//displayStats it not yet like i want... its a thing i really want beter
+//displayStats Im not happy with this, it doesn update... but prints it only at the beginning..
 function displayStats(person) {
   heroName.innerText = `Your Hero: ${person.name}`;
   heroHealth.innerText = `Health: ${person.health}`;
