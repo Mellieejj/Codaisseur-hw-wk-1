@@ -1,13 +1,23 @@
-// Write your JS here
-const myHero = {};
-// Write your JS here
 const hero = {
   name: "Coding Hero",
   heroic: true,
   inventory: [],
-  health: 5,
+  health: 10,
   weapon: { type: "sword", damage: 2 }
 };
+//variables
+
+const heroRest = document.getElementById("inn");
+const dagger = { type: "dagger", damage: 2 };
+const daggerImage = document.getElementById("dagger");
+const bag = document.getElementById("bag");
+const heroName = document.getElementById("heroName");
+const weaponType = document.getElementById("weaponType");
+const weaponDamage = document.getElementById("weaponDamage");
+const heroHealth = document.getElementById("health");
+const wType = hero.weapon.type;
+const wDamage = hero.weapon.damage;
+const changeName = document.getElementById("changeHeroName");
 
 // rest function
 function rest(person) {
@@ -20,9 +30,9 @@ function rest(person) {
 }
 
 // rest afbeelding click event
-const heroRest = document.getElementById("inn");
 heroRest.addEventListener("click", function() {
   rest(hero);
+  heroHealth.innerText = `Health: 10`;
 });
 
 // pickup item function
@@ -30,17 +40,14 @@ function pickUpItem(person, weapon) {
   person.inventory.push(weapon);
 }
 // dagger afbeelding click event
-const dagger = { type: "dagger", damage: 2 };
-const daggerImage = document.getElementById("dagger");
 daggerImage.addEventListener("click", function() {
   pickUpItem(hero, dagger);
   daggerImage.remove();
 });
 
-const bag = document.getElementById("bag");
 bag.addEventListener("click", function() {
   equipWeapon(hero);
-  displayStats();
+  displayStats(hero);
 });
 
 function equipWeapon(person) {
@@ -51,14 +58,6 @@ function equipWeapon(person) {
     person.weapon = person.inventory[0];
   }
 }
-const heroName = document.getElementById("heroName");
-const weaponType = document.getElementById("weaponType");
-const weaponDamage = document.getElementById("weaponDamage");
-const heroHealth = document.getElementById("health");
-const wType = hero.weapon.type;
-const wDamage = hero.weapon.damage;
-// console.log(hero.weapon.type);
-// console.log(hero.weapon.damage);
 
 function displayStats(person) {
   heroName.innerText = `Your Hero: ${person.name}`;
@@ -66,11 +65,20 @@ function displayStats(person) {
   weaponType.innerText = `Weapon: ${wType}`;
   weaponDamage.innerText = `Damage: ${wDamage}`;
 }
-displayStats(hero);
 
 function beatEnnemy() {
   const ennemy = document.getElementById("ennemy");
   ennemy.remove();
+  hero.health = 2;
+  heroHealth.innerText = `Health: 2`;
   const winText = document.getElementById("winningText");
   winText.innerText = "You beat the monster";
 }
+
+changeName.addEventListener("click", function() {
+  const newName = window.prompt("Enter your Hero Name:");
+  hero.name = newName;
+  heroName.innerText = `Your Hero: ${newName}`;
+});
+
+displayStats(hero);
