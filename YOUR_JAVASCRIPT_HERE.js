@@ -5,7 +5,7 @@ const hero = {
   name: "Coding Hero",
   heroic: true,
   inventory: [],
-  health: 10,
+  health: 5,
   weapon: { type: "sword", damage: 2 }
 };
 
@@ -16,6 +16,7 @@ function rest(person) {
   }
   person.health = 10;
   return person;
+  displayStats(person);
 }
 
 // rest afbeelding click event
@@ -33,11 +34,13 @@ const dagger = { type: "dagger", damage: 2 };
 const daggerImage = document.getElementById("dagger");
 daggerImage.addEventListener("click", function() {
   pickUpItem(hero, dagger);
+  daggerImage.remove();
 });
 
 const bag = document.getElementById("bag");
 bag.addEventListener("click", function() {
   equipWeapon(hero);
+  displayStats();
 });
 
 function equipWeapon(person) {
@@ -57,12 +60,17 @@ const wDamage = hero.weapon.damage;
 // console.log(hero.weapon.type);
 // console.log(hero.weapon.damage);
 
-function displayStats() {
-  heroName.innerText = `Name of your Hero: ${hero.name}`;
-  heroHealth.innerText = `Health of your Hero: ${hero.health}`;
+function displayStats(person) {
+  heroName.innerText = `Your Hero: ${person.name}`;
+  heroHealth.innerText = `Health: ${person.health}`;
   weaponType.innerText = `Weapon: ${wType}`;
   weaponDamage.innerText = `Damage: ${wDamage}`;
 }
-displayStats();
-console.log(hero.weapon.type);
-console.log(hero.weapon.damage);
+displayStats(hero);
+
+function beatEnnemy() {
+  const ennemy = document.getElementById("ennemy");
+  ennemy.remove();
+  const winText = document.getElementById("winningText");
+  winText.innerText = "You beat the monster";
+}

@@ -13,21 +13,21 @@
     <!-- 👍 YOUR HTML HERE 👍 -->
 
     <div class="hero-setup">
-      <div>
+      <div class="property">
         <p id="heroName"></p>
       </div>
-      <div>
+      <div class="property">
         <p id="health"></p>
       </div>
-      <div>
+      <div class="property">
         <p id="weaponType"></p>
       </div>
-      <div>
+      <div class="property">
         <p id="weaponDamage"></p>
       </div>
     </div>
 
-    <div id="heroOptions">
+    <div class="heroOptions">
       <img
         id="inn"
         src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/128232/nicubunu_Emoticons_Sleeping_face.png"
@@ -40,7 +40,16 @@
         id="bag"
         src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/121065/zaino_per_montagna.png"
       /><br />
-      <button>Change your hero's name</button>
+      <button id="changeHeroName">Change your hero's name</button>
+    </div>
+    <br />
+    <div class="ennemy">
+      <img
+        id="ennemy"
+        onclick="beatEnnemy()"
+        src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/71008/Mr%20Monster.png"
+      />
+      <p id="winningText"></p>
     </div>
     <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
     <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
