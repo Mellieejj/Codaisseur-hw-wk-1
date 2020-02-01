@@ -3,25 +3,45 @@
     <meta charset="utf-8" />
     <title>Mocha Tests</title>
     <link href="lib/mocha.css" rel="stylesheet" />
+    <link href="style/hero.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- 👍 YOUR HTML HERE 👍 -->
 
-    <p id="hero-setup"></p>
-    <img
-      id="inn"
-      src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/128232/nicubunu_Emoticons_Sleeping_face.png"
-    />
-    <img
-      id="dagger"
-      onclick="pickUpItem()"
-      src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/81716/circassian_dagger.png"
-    />
-    <img
-      id="bag"
-      src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/121065/zaino_per_montagna.png"
-    />
+    <div class="hero-setup">
+      <div>
+        <p id="heroName"></p>
+      </div>
+      <div>
+        <p id="health"></p>
+      </div>
+      <div>
+        <p id="weaponType"></p>
+      </div>
+      <div>
+        <p id="weaponDamage"></p>
+      </div>
+    </div>
 
+    <div id="heroOptions">
+      <img
+        id="inn"
+        src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/128232/nicubunu_Emoticons_Sleeping_face.png"
+      />
+      <img
+        id="dagger"
+        src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/81716/circassian_dagger.png"
+      />
+      <img
+        id="bag"
+        src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/121065/zaino_per_montagna.png"
+      /><br />
+      <button>Change your hero's name</button>
+    </div>
     <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
     <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
 

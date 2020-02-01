@@ -1,0 +1,17 @@
+p {
+  font-size: 20px;
+  font-family: "Indie Flower", cursive;
+}
+
+img {
+  width: auto;
+  height: 25%;
+  display: inline-block;
+  align-items: center;
+}
+
+.hero-setup {
+  border: 1.5px solid yellowgreen;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+}

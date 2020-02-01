@@ -48,3 +48,21 @@ function equipWeapon(person) {
     person.weapon = person.inventory[0];
   }
 }
+const heroName = document.getElementById("heroName");
+const weaponType = document.getElementById("weaponType");
+const weaponDamage = document.getElementById("weaponDamage");
+const heroHealth = document.getElementById("health");
+const wType = hero.weapon.type;
+const wDamage = hero.weapon.damage;
+// console.log(hero.weapon.type);
+// console.log(hero.weapon.damage);
+
+function displayStats() {
+  heroName.innerText = `Name of your Hero: ${hero.name}`;
+  heroHealth.innerText = `Health of your Hero: ${hero.health}`;
+  weaponType.innerText = `Weapon: ${wType}`;
+  weaponDamage.innerText = `Damage: ${wDamage}`;
+}
+displayStats();
+console.log(hero.weapon.type);
+console.log(hero.weapon.damage);
