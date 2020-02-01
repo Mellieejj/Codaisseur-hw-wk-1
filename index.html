@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mocha Tests</title>
+    <link href="lib/mocha.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- 👍 YOUR HTML HERE 👍 -->
+
+    <p id="hero-setup"></p>
+    <img
+      id="inn"
+      src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/128232/nicubunu_Emoticons_Sleeping_face.png"
+    />
+    <img
+      id="dagger"
+      onclick="pickUpItem()"
+      src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/81716/circassian_dagger.png"
+    />
+    <img
+      id="bag"
+      src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/121065/zaino_per_montagna.png"
+    />
+
+    <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
+    <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
+
+    <div id="mocha">
+      <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
+    </div>
+
+    <script src="lib/chai.js"></script>
+    <script src="lib/mocha.js"></script>
+    <script src="lib/sinon.js"></script>
+    <script>
+      mocha.setup("bdd");
+    </script>
+    <script src="YOUR_JAVASCRIPT_HERE.js"></script>
+    <script src="lib/game_logic.test.js"></script>
+  </body>
+</html>
