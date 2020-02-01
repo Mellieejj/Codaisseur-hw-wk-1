@@ -1,13 +1,12 @@
 p {
   font-size: 20px;
   font-family: "Indie Flower", cursive;
+  font-weight: bold;
 }
 
 img {
   width: auto;
   height: 25%;
-  display: inline-block;
-  align-items: center;
 }
 
 .hero-setup {
