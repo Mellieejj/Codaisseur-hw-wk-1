@@ -5,8 +5,8 @@ const hero = {
   health: 10,
   weapon: { type: "sword", damage: 2 }
 };
-//variables
 
+//variables
 const heroRest = document.getElementById("inn");
 const dagger = { type: "dagger", damage: 2 };
 const daggerImage = document.getElementById("dagger");
@@ -14,9 +14,9 @@ const bag = document.getElementById("bag");
 const heroName = document.getElementById("heroName");
 const weaponType = document.getElementById("weaponType");
 const weaponDamage = document.getElementById("weaponDamage");
-const heroHealth = document.getElementById("health");
-const wType = hero.weapon.type;
-const wDamage = hero.weapon.damage;
+let heroHealth = document.getElementById("health");
+let wType = hero.weapon.type;
+let wDamage = hero.weapon.damage;
 const changeName = document.getElementById("changeHeroName");
 
 // rest function
@@ -58,14 +58,14 @@ function equipWeapon(person) {
     person.weapon = person.inventory[0];
   }
 }
-
+//displayStats it not yet like i want... its a thing i really want beter
 function displayStats(person) {
   heroName.innerText = `Your Hero: ${person.name}`;
   heroHealth.innerText = `Health: ${person.health}`;
   weaponType.innerText = `Weapon: ${wType}`;
   weaponDamage.innerText = `Damage: ${wDamage}`;
 }
-
+// ennemy verslaan
 function beatEnnemy() {
   const ennemy = document.getElementById("ennemy");
   ennemy.remove();
@@ -74,7 +74,7 @@ function beatEnnemy() {
   const winText = document.getElementById("winningText");
   winText.innerText = "You beat the monster";
 }
-
+//changing hero name
 changeName.addEventListener("click", function() {
   const newName = window.prompt("Enter your Hero Name:");
   hero.name = newName;
